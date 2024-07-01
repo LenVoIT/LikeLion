@@ -6,7 +6,7 @@ public class ShoppingApp {
         Product p1 = new Product(1,"ProductA",70000);
         Product p2 = new Product(2,"ProductB",80000);
         Product p3 = new Product(3,"ProductC",90000);
-        Product p4 = new Product(3,"ProductD",200000);
+        Product p4 = new Product(4,"ProductD",200000);
 
         //init new Cart
         Cart c1 = new Cart();
