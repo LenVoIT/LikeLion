@@ -10,14 +10,14 @@ public class Classroom {
     private LocalDate startClassDate;
     private boolean isStarted;
     List<Student> students;
-    List<Teacher> teachers;
+//    List<Teacher> teachers;
 
-    public Classroom(LocalDate startClassDate, boolean isStarted, List<Student> students, List<Teacher> teachers) {
+    public Classroom(LocalDate startClassDate, boolean isStarted, List<Student> students) {
         this.id = idClassCounter++;
         this.startClassDate = startClassDate;
         this.isStarted = isStarted;
         this.students = new ArrayList<>();
-        this.teachers = new ArrayList<>();
+//        this.teachers = new ArrayList<>();
     }
 
     public Classroom() {
@@ -55,14 +55,14 @@ public class Classroom {
     public void setStudents(List<Student> students) {
         this.students = students;
     }
-
-    public List<Teacher> getTeachers() {
-        return teachers;
-    }
-
-    public void setTeachers(List<Teacher> teachers) {
-        this.teachers = teachers;
-    }
+//
+//    public List<Teacher> getTeachers() {
+//        return teachers;
+//    }
+//
+//    public void setTeachers(List<Teacher> teachers) {
+//        this.teachers = teachers;
+//    }
 
     @Override
     public String toString() {

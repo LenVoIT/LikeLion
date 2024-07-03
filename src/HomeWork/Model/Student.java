@@ -9,7 +9,16 @@ public class Student {
     private LocalDate dob;
     private String idCard;
     private boolean isDropped = false;
+    private String dropReason;
+    private String classRoom;
 
+    public String getDropReason() {
+        return dropReason;
+    }
+
+    public void setDropReason(String dropReason) {
+        this.dropReason = dropReason;
+    }
 
     public Student(String name, LocalDate dob, String idCard, boolean isDropped) {
         this.id = idCounter++;
@@ -31,7 +40,7 @@ public class Student {
     }
 
     public int getId() {
-        return id;
+        return ++id;
     }
 
     public void setId(int id) {
@@ -65,7 +74,7 @@ public class Student {
     @Override
     public String toString() {
         return "id: " + id + "\tStudent's name: " + name + "\tDOB: " + dob +
-                "\tIdCard: " + idCard + "\tisDropped=" + isDropped;
+                "\tIdCard: " + idCard + "\tisDropped=" + isDropped + "\tDrop reason: " + dropReason;
 
     }
 }

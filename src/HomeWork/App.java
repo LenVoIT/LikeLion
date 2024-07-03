@@ -49,13 +49,30 @@ public class App {
         students.add(s8);
         students.add(s9);
         students.add(s10);
-        //Show student
+        //Show list student
         schoolService.showStudents();
+        //update 1 student
+        schoolService.updateStudentInfo(1,"ABCXYZ", LocalDate.parse("2003-02-02"),"9999");
+        //Show list student
+        schoolService.showStudents();
+        System.out.println();
+        //show student detail
+        schoolService.showDetailStudent(2);
+
+        //remove student
+        schoolService.removeStudent(10,"Trốn học");
         //Gán student vào classroom
 
         //Gán teacher vào classroom
 
         ClassroomService classroomService = new ClassroomService();
-        classroomService.addStudentIntoClass(schoolService.getStudentById(1));
+//        classroomService.addStudentIntoClass(s1);
+//        classroomService.addStudentIntoClass(s2);
+//        classroomService.addStudentIntoClass(s3);
+
+//        classroomService.addStudentIntoClass(students);
+
+
+        schoolService.showClassrooms();
     }
 }

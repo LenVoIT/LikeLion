@@ -1,32 +1,27 @@
 package HomeWork.Service;
 
+import HomeWork.Interface.SchoolInterface;
 import HomeWork.Model.Classroom;
 import HomeWork.Model.Student;
-import HomeWork.Model.Teacher;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class SchoolService {
+public class SchoolService implements SchoolInterface {
     //khởi tạo arrayList students
     public static ArrayList<Student> students = new ArrayList<>();
     //khởi tạo arrayList classrooms
     public static ArrayList<Classroom> classrooms = new ArrayList<>();
-    //khởi tạo arrayList teachers
-    static ArrayList<Teacher> teachers = new ArrayList<>();
+
 
     //Student
     public void addStudents(Student student) {
         students.add(student);
     }
 
-    //tìm Sinh viên theo CCCD
+    //tìm Sinh viên theo id
     public Student getStudentById(int id) {
-        for (Student student : students) {
-            if (student.getId() == id)
-                return student;
-        }
-        return null;
+        return students.get(--id);
     }
 
     public void showStudents() {
@@ -38,6 +33,11 @@ public class SchoolService {
         }
     }
 
+    public void showDetailStudent(int id) {
+        Student student = getStudentById(id);
+        System.out.println(student.toString());
+    }
+
     public void updateStudentInfo(int id, String name, LocalDate dob, String idCard) {
         Student student = getStudentById(id);
         if (student != null) {
@@ -46,18 +46,15 @@ public class SchoolService {
             student.setIdCard(idCard);
         }
     }
-    //Teacher
-        //public void addTeacher(Teacher teacher) {
-        //    teachers.add(teacher);
-        //}
-        //
-        //public void showTeachers() {
-        //    System.out.println("List teachers: ");
-        //    for (Teacher teacher : teachers) {
-        //        System.out.println(teacher.toString());
-        //    }
-        //}
 
+    public void removeStudent(int id, String dropReason){
+        Student student = getStudentById(id);
+        if (student != null) {
+            student.setDropped(true);
+            student.setDropReason(dropReason);
+        }
+        showDetailStudent(id);
+    }
     //Classroom
     public void addClassroom(Classroom classroom) {
         classrooms.add(classroom);

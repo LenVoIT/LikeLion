@@ -6,7 +6,6 @@ import java.util.List;
 public class School {
     private List<Classroom> classrooms;
     private List<Student> students;
-    private List<Teacher> teachers;
 
 //    public School(List<Classroom> classrooms, List<Student> students, List<Teacher> teachers) {
 //        this.classrooms = new ArrayList<>();
@@ -34,11 +33,5 @@ public class School {
         this.students = students;
     }
 
-    public List<Teacher> getTeachers() {
-        return teachers;
-    }
 
-    public void setTeachers(List<Teacher> teachers) {
-        this.teachers = teachers;
-    }
 }
