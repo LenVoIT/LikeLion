@@ -8,7 +8,7 @@ public class Teacher {
     private String name;
     List<Classroom> classrooms;
 
-    public Teacher(int id, String name, List<Classroom> classrooms) {
+    public Teacher(String name, List<Classroom> classrooms) {
         this.id = ++idCounter;
         this.name = name;
         this.classrooms = classrooms;
@@ -40,5 +40,10 @@ public class Teacher {
 
     public void setClassrooms(List<Classroom> classrooms) {
         this.classrooms = classrooms;
+    }
+
+    @Override
+    public String toString() {
+        return "Id: " + id + " Teacher's name: " + name + " Classrooms: " + classrooms;
     }
 }

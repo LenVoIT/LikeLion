@@ -1,25 +1,27 @@
 package HomeWork.Model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Classroom {
-    private static int idCounter;
+    private static int idClassCounter = 1;
     private int id;
     private LocalDate startClassDate;
     private boolean isStarted;
     List<Student> students;
     List<Teacher> teachers;
 
-    public Classroom(int id, LocalDate startClassDate, boolean isStarted, List<Student> students, List<Teacher> teachers) {
-        this.id = id;
+    public Classroom(LocalDate startClassDate, boolean isStarted, List<Student> students, List<Teacher> teachers) {
+        this.id = idClassCounter++;
         this.startClassDate = startClassDate;
         this.isStarted = isStarted;
-        this.students = students;
-        this.teachers = teachers;
+        this.students = new ArrayList<>();
+        this.teachers = new ArrayList<>();
     }
 
     public Classroom() {
+        this.id = idClassCounter++;
     }
 
     public int getId() {
@@ -60,5 +62,10 @@ public class Classroom {
 
     public void setTeachers(List<Teacher> teachers) {
         this.teachers = teachers;
+    }
+
+    @Override
+    public String toString() {
+        return "id: " + id + "\tStart date: " + startClassDate;
     }
 }

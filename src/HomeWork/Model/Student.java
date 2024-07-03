@@ -3,17 +3,28 @@ package HomeWork.Model;
 import java.time.LocalDate;
 
 public class Student {
-    private static int idCounter;
+    private static int idCounter = 1;
     private int id;
     private String name;
     private LocalDate dob;
     private String idCard;
+    private boolean isDropped = false;
 
-    public Student(int id, String name, LocalDate dob, String idCard) {
-        this.id = ++idCounter;
+
+    public Student(String name, LocalDate dob, String idCard, boolean isDropped) {
+        this.id = idCounter++;
         this.name = name;
         this.dob = dob;
         this.idCard = idCard;
+        this.isDropped = isDropped;
+    }
+
+    public boolean isDropped() {
+        return isDropped;
+    }
+
+    public void setDropped(boolean dropped) {
+        isDropped = dropped;
     }
 
     public Student() {
@@ -49,5 +60,12 @@ public class Student {
 
     public void setIdCard(String idCard) {
         this.idCard = idCard;
+    }
+
+    @Override
+    public String toString() {
+        return "id: " + id + "\tStudent's name: " + name + "\tDOB: " + dob +
+                "\tIdCard: " + idCard + "\tisDropped=" + isDropped;
+
     }
 }
