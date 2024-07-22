@@ -69,5 +69,17 @@ public class BaiTapOnl1 {
                 .findFirst()
                 .orElse(1);
         System.out.println("Second largest element: " + secondLargestEle);
+
+        int sum = listNumbers.stream()
+                .filter(n -> n % 2 == 0)
+                .mapToInt(Integer::intValue)
+                .sum();
+        System.out.println("Sum: " + sum);
+
+        int parallelSum = listNumbers.parallelStream()
+                .filter(n -> n % 2 == 0)
+                .mapToInt(Integer::intValue)
+                .sum();
+        System.out.println("Parallel Sum: " + parallelSum);
     }
 }
